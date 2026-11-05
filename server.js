@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(rotas);
 
 app.get('/', (req, res) => {
-    res.send('API de resíduos funcionando!');
+    res.send('API de resíduos funcionando');
 });
 
 app.listen(3000, () => {
