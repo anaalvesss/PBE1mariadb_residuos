@@ -1,45 +1,38 @@
-DROP DATABASE IF EXISTS gestao_residuos;
-
-CREATE DATABASE gestao_residuos;
-
-USE gestao_residuos;
-
-CREATE TABLE usuario (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(100) NOT NULL
+drop database if exists gestao_residuos;
+create database gestao_residuos;
+use gestao_residuos;
+-- DDL Criação das tabelas
+create table usuario (
+    id int not null auto_increment primary key,
+    nome varchar(100) not null,
+    email varchar(100) not null unique,
+    senha varchar(100) not null
 );
-
-CREATE TABLE ocorrencia (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    usuarioId INT NOT NULL,
-    local VARCHAR(100) NOT NULL,
-    tipoResiduo VARCHAR(50) NOT NULL,
-    nivelRisco ENUM('Baixo', 'Medio', 'Alto') DEFAULT 'Medio' NOT NULL,
-    data DATE DEFAULT (CURDATE()) NOT NULL,
-    status ENUM('Novo', 'Tratado', 'Pendente') DEFAULT 'Novo' NOT NULL
+create table ocorrencia (
+    id int not null auto_increment primary key,
+    usuarioId int not null,
+    local varchar(100) not null,
+    tipoResiduo varchar(50) not null,
+    nivelRisco enum('Baixo', 'Medio', 'Alto') default('Medio') not null,
+    data Date default(curdate()) not null,
+    status enum('Novo', 'Tratado', 'Pendente') default('Novo') not null
 );
+alter table ocorrencia add constraint fk_registra
+foreign key (usuarioId) references usuario(id);
 
-ALTER TABLE ocorrencia
-ADD CONSTRAINT fk_registra
-FOREIGN KEY (usuarioId) REFERENCES usuario(id);
+-- DML para inserir dados de exemplo nas tabelas
+insert into usuario (nome, email, senha) values
+('Maria Oliveira', 'maria.oliveira@email.com', password('senha123')),
+('João Silva', 'joao.silva@email.com', password('senha123')),
+('Ana Souza', 'ana.souza@email.com', password('senha123'));
 
-INSERT INTO usuario (nome, email, senha) VALUES
-('Maria Oliveira', 'maria.oliveira@email.com', PASSWORD('senha123')),
-('João Silva', 'joao.silva@email.com', PASSWORD('senha123')),
-('Ana Souza', 'ana.souza@email.com', PASSWORD('senha123'));
-
-INSERT INTO ocorrencia
-(usuarioId, local, tipoResiduo, nivelRisco, status) VALUES
+insert into ocorrencia(usuarioId, local, tipoResiduo, nivelRisco, status) values
 (1, 'Avenida Osmar Contato, 120', 'Eletrônico', 'Alto', 'Novo'),
 (2, 'Rua Osmar Motta, 1313', 'Veículo usado', 'Baixo', 'Pendente'),
 (1, 'Rua Lucas trado, 15', 'Eletônico', 'Alto', 'Tratado'),
 (2, 'Rua Rolando da Rocha, S/N', 'Móvel usado', 'Medio', 'Novo'),
 (3, 'Rua Jacinto Melo, 101', 'Hospitalar', 'Alto', 'Novo');
 
-SELECT * FROM usuario;
-
-SELECT * FROM ocorrencia;
-
-SHOW TABLES;
+select * from usuario;
+select * from ocorrencia;
+show tables;
