@@ -1,0 +1,153 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "CRUDs - Backend Gerado",
+  "dateExported": "2026-11-12T14:27:41.061Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "req_1",
+      "colId": "crud_gerado",
+      "name": "usuario - Cadastrar",
+      "url": "http://localhost:3000/usuarios/cadastrar",
+      "method": "POST",
+      "sortNum": 1000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"id\": 1,\n  \"nome\": \"Exemplo\",\n  \"email\": \"Exemplo\",\n  \"senha\": \"Exemplo\"\n}"
+      }
+    },
+    {
+      "_id": "req_2",
+      "colId": "crud_gerado",
+      "name": "usuario - Listar",
+      "url": "http://localhost:3000/usuarios/listar",
+      "method": "GET",
+      "sortNum": 2000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "req_3",
+      "colId": "crud_gerado",
+      "name": "usuario - Alterar",
+      "url": "http://localhost:3000/usuarios/alterar/1",
+      "method": "PUT",
+      "sortNum": 3000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"id\": 1,\n  \"nome\": \"Exemplo\",\n  \"email\": \"Exemplo\",\n  \"senha\": \"Exemplo\"\n}"
+      }
+    },
+    {
+      "_id": "req_4",
+      "colId": "crud_gerado",
+      "name": "usuario - Excluir",
+      "url": "http://localhost:3000/usuarios/excluir/1",
+      "method": "DELETE",
+      "sortNum": 4000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "req_5",
+      "colId": "crud_gerado",
+      "name": "ocorrencia - Cadastrar",
+      "url": "http://localhost:3000/ocorrencias/cadastrar",
+      "method": "POST",
+      "sortNum": 5000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"id\": 1,\n  \"usuarioId\": 1,\n  \"local\": \"Exemplo\",\n  \"tipoResiduo\": \"Exemplo\",\n  \"nivelRisco\": \"Exemplo\",\n  \"data\": \"2026-11-12\",\n  \"status\": \"Exemplo\"\n}"
+      }
+    },
+    {
+      "_id": "req_6",
+      "colId": "crud_gerado",
+      "name": "ocorrencia - Listar",
+      "url": "http://localhost:3000/ocorrencias/listar",
+      "method": "GET",
+      "sortNum": 6000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "req_7",
+      "colId": "crud_gerado",
+      "name": "ocorrencia - Alterar",
+      "url": "http://localhost:3000/ocorrencias/alterar/1",
+      "method": "PUT",
+      "sortNum": 7000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"id\": 1,\n  \"usuarioId\": 1,\n  \"local\": \"Exemplo\",\n  \"tipoResiduo\": \"Exemplo\",\n  \"nivelRisco\": \"Exemplo\",\n  \"data\": \"2026-11-12\",\n  \"status\": \"Exemplo\"\n}"
+      }
+    },
+    {
+      "_id": "req_8",
+      "colId": "crud_gerado",
+      "name": "ocorrencia - Excluir",
+      "url": "http://localhost:3000/ocorrencias/excluir/1",
+      "method": "DELETE",
+      "sortNum": 8000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "tests": []
+    }
+  ]
+}
